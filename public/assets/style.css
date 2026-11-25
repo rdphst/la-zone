@@ -76,13 +76,11 @@ th{background:var(--navy);color:var(--white)}
 .price-note{font-size:.85rem;color:var(--muted);margin-top:8px}
 
 /* faq */
-.faq-block{margin:8px 0 0}
-.faq-block details{border-bottom:1px solid var(--line);padding:14px 0}
-.faq-block summary{font-weight:700;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
-.faq-block summary::-webkit-details-marker{display:none}
-.faq-block summary::after{content:"+";color:var(--pink);font-size:1.3rem}
-.faq-block details[open] summary::after{content:"\2212"}
-.faq-block details p{margin:10px 0 0;color:#3a4451}
+.faq-block{margin:8px 0 0;max-width:780px}
+.faq-block h3{font-size:1.08rem;font-weight:700;color:var(--navy);margin:22px 0 6px}
+.faq-block h3:first-child{margin-top:0}
+.faq-block p{margin:0 0 4px;color:#3a4451;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.faq-block p:last-child{padding-bottom:0;border-bottom:0}
 
 /* contact block */
 .contact-block{background:linear-gradient(135deg,var(--navy) 0%,#152540 100%);border-radius:16px;padding:32px;margin:32px 0;color:#cfd5df}
@@ -112,3 +110,5 @@ th{background:var(--navy);color:var(--white)}
   .contact-block{padding:24px}
   .price-band{padding:20px}
 }
+
+
