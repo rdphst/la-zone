@@ -1,4 +1,13 @@
-:root{--navy:#0B1829;--pink:#E0245E;--soft:#D4819F;--bg:#f6f7f9;--text:#1c2430;--white:#fff}
+:root{
+  --navy:#0B1829;
+  --pink:#E0245E;
+  --soft:#D4819F;
+  --bg:#f6f7f9;
+  --text:#1c2430;
+  --white:#fff;
+  --line:#e3e6ec;
+  --muted:#5b6573;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.65}
@@ -13,21 +22,27 @@ h2{font-size:clamp(1.3rem,2.6vw,1.7rem);margin:0 0 .6em}
 .site-header{background:var(--navy);position:sticky;top:0;z-index:50}
 .site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:10px;color:var(--white);text-decoration:none;font-weight:800;letter-spacing:.04em}
-.brand img{height:44px;width:auto}
+.brand img{height:56px;width:auto}
 .nav{display:flex;flex-wrap:wrap;gap:4px 16px;list-style:none;margin:0;padding:0}
 .nav a{color:var(--white);text-decoration:none;font-size:.92rem;padding:6px 2px;border-bottom:2px solid transparent}
 .nav a:hover,.nav a[aria-current="page"]{border-color:var(--pink)}
 
 /* breadcrumb */
-.crumbs{font-size:.85rem;padding:14px 0;color:#5b6573}
+.crumbs{font-size:.85rem;padding:14px 0;color:var(--muted)}
 .crumbs ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
-.crumbs li+li::before{content:"›";margin-right:6px;color:var(--soft)}
-.crumbs a{color:#5b6573}
+.crumbs li+li::before{content:"\203a";margin-right:6px;color:var(--soft)}
+.crumbs a{color:var(--muted)}
 
 /* hero */
-.hero{background:var(--navy);color:var(--white);padding:48px 0}
+.hero{background:var(--navy);color:var(--white);padding:56px 0}
 .hero h1{color:var(--white)}
 .hero p{max-width:760px;color:#e6e9ef;font-size:1.08rem}
+.hero-intro{display:grid;gap:32px;grid-template-columns:1fr}
+.hero-checklist{background:rgba(255,255,255,.08);border-radius:12px;padding:20px 24px}
+.hero-checklist h2{color:var(--white);font-size:1rem;margin:0 0 12px;text-transform:uppercase;letter-spacing:.06em}
+.hero-checklist ul{list-style:none;margin:0;padding:0}
+.hero-checklist li{padding:5px 0;color:#e6e9ef;font-size:.95rem}
+.hero-checklist li::before{content:"\2713 ";color:var(--pink);font-weight:700}
 .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
 .btn{display:inline-block;background:var(--pink);color:var(--white);text-decoration:none;font-weight:700;padding:12px 22px;border-radius:8px}
 .btn:hover{filter:brightness(1.1)}
@@ -35,22 +50,47 @@ h2{font-size:clamp(1.3rem,2.6vw,1.7rem);margin:0 0 .6em}
 .btn.alt{background:#25D366;color:#06210f}
 
 /* content */
-main section{padding:34px 0;border-bottom:1px solid #e3e6ec}
+main section{padding:34px 0;border-bottom:1px solid var(--line)}
 .prose{max-width:780px}
 .prose p{margin:0 0 1em}
 .photo{margin:24px 0}
 .photo img{border-radius:12px;width:100%;object-fit:cover}
-.photo figcaption{font-size:.85rem;color:#5b6573;margin-top:6px}
+.photo figcaption{font-size:.85rem;color:var(--muted);margin-top:6px}
+.section-photo{margin:24px 0 0}
+.section-photo img{border-radius:10px;width:100%;max-height:420px;object-fit:cover}
+.section-photo figcaption{font-size:.84rem;color:var(--muted);margin-top:6px}
 .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.card{background:var(--white);border:1px solid #e3e6ec;border-radius:12px;padding:20px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:20px}
 .card h3{margin-top:0}
 .facts{background:var(--white);border-left:4px solid var(--pink);border-radius:8px;padding:16px 20px;margin:20px 0}
 .facts dt{font-weight:700;color:var(--navy)}
 .facts dd{margin:0 0 .6em}
 table{width:100%;border-collapse:collapse;background:var(--white);border-radius:10px;overflow:hidden}
-th,td{padding:12px 14px;border-bottom:1px solid #e3e6ec;text-align:left}
+th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left}
 th{background:var(--navy);color:var(--white)}
-.updated{font-size:.85rem;color:#5b6573;padding:18px 0}
+.updated{font-size:.85rem;color:var(--muted);padding:18px 0}
+
+/* pricing reference */
+.price-band{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:24px 28px;margin:28px 0}
+.price-band h2{margin-top:0}
+.price-note{font-size:.85rem;color:var(--muted);margin-top:8px}
+
+/* faq */
+.faq-block{margin:8px 0 0}
+.faq-block details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq-block summary{font-weight:700;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-block summary::-webkit-details-marker{display:none}
+.faq-block summary::after{content:"+";color:var(--pink);font-size:1.3rem}
+.faq-block details[open] summary::after{content:"\2212"}
+.faq-block details p{margin:10px 0 0;color:#3a4451}
+
+/* contact block */
+.contact-block{background:linear-gradient(135deg,var(--navy) 0%,#152540 100%);border-radius:16px;padding:32px;margin:32px 0;color:#cfd5df}
+.contact-block h2{color:var(--white);margin-top:0}
+.contact-grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-bottom:24px}
+.contact-item dt{font-weight:700;color:var(--white);font-size:.9rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+.contact-item dd{margin:0}
+.contact-item a{color:var(--soft)}
 
 /* footer */
 .site-footer{background:var(--navy);color:#cfd5df;margin-top:40px;padding:40px 0 20px}
@@ -59,9 +99,16 @@ th{background:var(--navy);color:var(--white)}
 .site-footer ul{list-style:none;margin:0;padding:0}
 .site-footer li{margin:6px 0}
 .site-footer .copy{border-top:1px solid #243247;margin-top:26px;padding-top:14px;font-size:.85rem}
+.footer-grid{display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));padding-bottom:10px}
 
+/* responsive */
+@media (min-width:760px){
+  .hero-intro{grid-template-columns:1fr 320px;align-items:center}
+}
 @media (max-width:640px){
- .site-header .wrap{justify-content:center}
- .nav{justify-content:center}
- .hero{padding:32px 0}
+  .site-header .wrap{justify-content:center}
+  .nav{justify-content:center}
+  .hero{padding:32px 0}
+  .contact-block{padding:24px}
+  .price-band{padding:20px}
 }
